@@ -8,6 +8,9 @@ Também optei por criar alguns diferenciais como escolha do tema light/dark, int
 
 ## Demo
 
+A aplicação está disponível em:
+[Acessar demonstração](https://desafio-desbravador-kappa.vercel.app/)
+
 ## Funcionalidades
 
 - Busca por usuário do GitHub
