@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f8fc" />
+  <meta name="description" content="Detalhes de um repositório público do GitHub." />
+  <title>Repositório | GitHub Explorer</title>
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-container header-content">
+      <a class="brand" href="/" aria-label="GitHub Explorer - Home"><span class="brand-mark" aria-hidden="true">●</span><span>GitHub Explorer</span></a>
+      <div class="header-actions">
+        <div class="language-switcher" aria-label="Language selector"><button class="language-button" type="button" data-language="pt">PT</button><button class="language-button" type="button" data-language="en">EN</button></div>
+        <button class="icon-button" type="button" data-theme-toggle><span data-theme-icon>☾</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-page content-page">
+    <div class="app-container repo-detail-page">
+      <a class="back-link" id="back-to-user" href="/"><span aria-hidden="true">←</span><span data-i18n="repository.backToUser">Voltar para</span> <strong id="back-user-name"></strong></a>
+
+      <section id="repository-loading">
+        <div class="repo-detail-hero"><span class="skeleton skeleton-line skeleton-sm"></span><span class="skeleton skeleton-line skeleton-lg hero-skeleton"></span><span class="skeleton skeleton-line skeleton-md"></span></div>
+        <div class="repo-stats-grid"><div class="app-card stat-card skeleton-card-small"></div><div class="app-card stat-card skeleton-card-small"></div><div class="app-card stat-card skeleton-card-small"></div></div>
+      </section>
+
+      <section id="repository-error" class="state-card app-card" hidden><div class="state-icon">!</div><h1 id="repo-error-title"></h1><p id="repo-error-description"></p><a class="btn-app-primary" href="/" data-i18n="notFound.action">Voltar ao início</a></section>
+
+      <section id="repository-content" hidden>
+        <header class="repo-detail-hero"><p class="repo-kicker" id="repo-owner"></p><h1 id="repo-name"></h1><p id="repo-description"></p></header>
+        <div class="repo-stats-grid">
+          <article class="app-card stat-card"><div class="stat-icon">★</div><strong id="repo-stars">0</strong><span data-i18n="common.stars">Estrelas</span></article>
+          <article class="app-card stat-card"><div class="stat-icon">●</div><strong id="repo-language">—</strong><span data-i18n="common.language">Linguagem</span></article>
+          <article class="app-card stat-card"><div class="stat-icon">⑂</div><strong id="repo-forks">0</strong><span data-i18n="common.forks">Forks</span></article>
+        </div>
+        <article class="repo-about-card app-card">
+          <span class="section-eyebrow" data-i18n="repository.about">Sobre o repositório</span><h2 id="repo-full-name"></h2><p id="repo-about-description"></p>
+          <dl class="repo-details-list">
+            <div><dt data-i18n="repository.fullName">Nome completo</dt><dd id="repo-full-name-detail"></dd></div>
+            <div><dt data-i18n="common.updated">Atualizado</dt><dd id="repo-updated"></dd></div>
+          </dl>
+          <a class="btn-app-primary repo-external-button" id="repo-external-link" target="_blank" rel="noopener noreferrer"><span data-i18n="common.openGithub">Abrir no GitHub</span> ↗</a>
+        </article>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/src/js/pages/repository.js"></script>
+</body>
+</html>
