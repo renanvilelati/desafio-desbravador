@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f8fc" />
+  <meta name="description" content="Detalhes de um usuário do GitHub e seus repositórios." />
+  <title>Usuário | GitHub Explorer</title>
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-container header-content">
+      <a class="brand" href="/" aria-label="GitHub Explorer - Home"><span class="brand-mark" aria-hidden="true">●</span><span>GitHub Explorer</span></a>
+      <div class="header-actions">
+        <div class="language-switcher" aria-label="Language selector">
+          <button class="language-button" type="button" data-language="pt">PT</button>
+          <button class="language-button" type="button" data-language="en">EN</button>
+        </div>
+        <button class="icon-button" type="button" data-theme-toggle><span data-theme-icon>☾</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-page content-page">
+    <div class="app-container">
+      <a class="back-link" href="/"><span aria-hidden="true">←</span><span data-i18n="user.newSearch">Nova busca</span></a>
+
+      <section id="user-loading" class="user-layout" aria-label="Loading">
+        <aside class="app-card profile-card skeleton-card">
+          <span class="skeleton skeleton-avatar"></span><span class="skeleton skeleton-line skeleton-md"></span><span class="skeleton skeleton-line skeleton-sm"></span><span class="skeleton skeleton-line skeleton-lg"></span>
+          <div class="skeleton-stats"><span class="skeleton"></span><span class="skeleton"></span></div>
+        </aside>
+        <div class="repositories-panel">
+          <div class="repositories-header"><span class="skeleton skeleton-line skeleton-md"></span><span class="skeleton skeleton-select"></span></div>
+          <div><div class="app-card skeleton-repo"><span class="skeleton skeleton-line skeleton-md"></span><span class="skeleton skeleton-line skeleton-lg"></span></div><div class="app-card skeleton-repo"><span class="skeleton skeleton-line skeleton-sm"></span><span class="skeleton skeleton-line skeleton-lg"></span></div></div>
+        </div>
+      </section>
+
+      <section id="user-error" class="state-card app-card" hidden>
+        <div class="state-icon">!</div><h1 id="error-title"></h1><p id="error-description"></p><a class="btn-app-primary" href="/" data-i18n="user.newSearch">Nova busca</a>
+      </section>
+
+      <section id="user-content" class="user-layout" hidden>
+        <aside class="app-card profile-card" aria-labelledby="user-name">
+          <img class="user-avatar" id="user-avatar" src="" alt="" width="112" height="112" />
+          <div class="profile-heading"><h1 id="user-name"></h1><p id="user-login"></p></div>
+          <p class="profile-bio" id="user-bio"></p>
+          <dl class="profile-stats">
+            <div><dd id="user-followers">0</dd><dt data-i18n="common.followers">Seguidores</dt></div>
+            <div><dd id="user-following">0</dd><dt data-i18n="common.following">Seguindo</dt></div>
+          </dl>
+          <div class="profile-meta">
+            <div><span class="meta-symbol" aria-hidden="true">✉</span><span><small data-i18n="common.email">E-mail</small><span id="user-email"></span></span></div>
+            <div><span class="meta-symbol" aria-hidden="true">↗</span><a id="user-github-link" target="_blank" rel="noopener noreferrer"></a></div>
+          </div>
+        </aside>
+
+        <section class="repositories-panel" aria-labelledby="repositories-title">
+          <div class="repositories-header">
+            <div>
+              <div class="title-with-count"><h2 id="repositories-title" data-i18n="common.repositories">Repositórios</h2><span id="repository-count">0</span></div>
+              <p><span id="repository-count-text">0</span> <span data-i18n="user.repositoriesFound">repositórios encontrados</span></p>
+            </div>
+            <label class="sort-control"><span data-i18n="user.sortBy">Ordenar por</span>
+              <select class="app-select" id="repository-sort">
+                <option value="starsDesc" data-i18n="user.sort.starsDesc">Mais estrelas</option>
+                <option value="starsAsc" data-i18n="user.sort.starsAsc">Menos estrelas</option>
+                <option value="nameAsc" data-i18n="user.sort.nameAsc">Nome A–Z</option>
+                <option value="nameDesc" data-i18n="user.sort.nameDesc">Nome Z–A</option>
+                <option value="updated" data-i18n="user.sort.updated">Atualizados recentemente</option>
+              </select>
+            </label>
+          </div>
+          <div class="repository-list" id="repository-list" aria-live="polite"></div>
+          <div class="empty-card app-card" id="empty-repositories" hidden><div class="state-icon state-icon-small">○</div><h2 data-i18n="user.noRepositories">Nenhum repositório público encontrado.</h2></div>
+        </section>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/src/js/pages/user.js"></script>
+</body>
+</html>
