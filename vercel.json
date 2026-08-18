@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/users/:username", "destination": "/user.html" },
+    { "source": "/repositories/:owner/:repository", "destination": "/repository.html" }
+  ]
+}
