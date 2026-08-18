@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8fc" />
+    <meta
+      name="description"
+      content="Explore usuários e repositórios públicos do GitHub."
+    />
+    <title>GitHub Explorer</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="app-container header-content">
+        <a class="brand" href="/" aria-label="GitHub Explorer - Home">
+          <span class="brand-mark" aria-hidden="true">●</span
+          ><span>GitHub Explorer</span>
+        </a>
+        <div class="header-actions">
+          <div class="language-switcher" aria-label="Language selector">
+            <button class="language-button" type="button" data-language="pt">
+              PT
+            </button>
+            <button class="language-button" type="button" data-language="en">
+              EN
+            </button>
+          </div>
+          <button class="icon-button" type="button" data-theme-toggle>
+            <span data-theme-icon>☾</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-page home-page">
+      <section class="hero app-container" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <span class="hero-eyebrow"
+            ><span class="hero-dot"></span
+            ><span data-i18n="home.badge"
+              >GitHub Repository Explorer</span
+            ></span
+          >
+          <h1 class="hero-title" id="hero-title">
+            <span class="hero-title-main" data-i18n="home.title"
+              >Explore o GitHub.</span
+            >
+            <strong data-i18n="home.titleHighlight"
+              >Descubra grandes projetos.</strong
+            >
+          </h1>
+          <p class="hero-description" data-i18n="home.description">
+            Encontre desenvolvedores e descubra os projetos mais populares que
+            estão construindo no GitHub.
+          </p>
+
+          <form class="search-form" id="search-form" novalidate>
+            <label
+              class="visually-hidden"
+              for="username"
+              data-i18n="home.placeholder"
+              >Digite um usuário do GitHub</label
+            >
+            <div class="search-control">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input
+                class="app-input search-input"
+                id="username"
+                name="username"
+                autocomplete="off"
+                spellcheck="false"
+                required
+                data-i18n-placeholder="home.placeholder"
+                placeholder="Digite um usuário do GitHub"
+              />
+              <button
+                class="btn-app-primary search-button"
+                type="submit"
+                data-i18n="common.search"
+              >
+                Buscar
+              </button>
+            </div>
+            <p class="form-error" id="search-error" role="alert" hidden></p>
+          </form>
+
+          <div class="search-examples">
+            <span data-i18n="home.try">Experimente:</span>
+            <button type="button" data-example-user="DesbravadorSoftware">
+              DesbravadorSoftware</button
+            ><span>·</span>
+            <button type="button" data-example-user="maykbrito">
+              maykbrito</button
+            ><span>·</span>
+            <button type="button" data-example-user="gustavoguanabara">
+              gustavoguanabara
+            </button>
+          </div>
+        </div>
+
+        <aside class="feature-card app-card" aria-label="Feature">
+          <div class="feature-icon" aria-hidden="true">★</div>
+          <div>
+            <h2 data-i18n="home.featureTitle">
+              Descubra os projetos mais populares
+            </h2>
+            <p data-i18n="home.featureDescription">
+              Explore os repositórios de qualquer usuário e encontre rapidamente
+              seus projetos com mais estrelas.
+            </p>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="/src/js/pages/home.js"></script>
+  </body>
+</html>
